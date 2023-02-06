@@ -1,0 +1,30 @@
+<template>
+  <lightning-card>
+    <div class="header-section" style="background-color: #0070d2; padding: 1rem; border-radius: 0.5rem 0.5rem 0 0;">
+      <h1 class="header-text" style="color: white; font-size: 2.5rem; text-align: center;">Expenses Tracker</h1>
+    </div>
+
+    <div class="form-section slds-m-around_medium">
+      <lightning-input label="Date" type="date" value={date} onchange={handleDateChange} class="slds-m-bottom_medium"
+        style="border: 1px solid #0070d2; border-radius: 0.5rem; padding: 0.5rem;"></lightning-input>
+
+      <lightning-input label="Payment Type" value={paymentType} onchange={handlePaymentTypeChange}
+        class="slds-m-bottom_medium"
+        style="border: 1px solid #0070d2; border-radius: 0.5rem; padding: 0.5rem;"></lightning-input>
+      <lightning-input label="Description" value={description} onchange={handleDescriptionChange}
+        class="slds-m-bottom_medium"
+        style="border: 1px solid #0070d2; border-radius: 0.5rem; padding: 0.5rem;"></lightning-input>
+      <lightning-input label="Amount" type="number" value={amount} onchange={handleAmountChange}
+        class="slds-m-bottom_medium"
+        style="border: 1px solid #0070d2; border-radius: 0.5rem; padding: 0.5rem;"></lightning-input>
+      <div class="add-button-section">
+        <lightning-button label="Add Expense" variant="brand" onclick={handleAddExpense}
+          style="background-color: #0070d2; color: white; "></lightning-button>
+      </div>
+    </div>
+    <div class="datatable-section slds-m-top_medium">
+      <lightning-datatable data={expenses} columns={columns} key-field="id"
+        onrowaction={handleRowAction}></lightning-datatable>
+    </div>
+  </lightning-card>
+</template>
