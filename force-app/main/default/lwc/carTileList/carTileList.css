@@ -1,0 +1,12 @@
+c-car-tile{
+    min-width: 200px;
+    flex:1;
+}
+.content{
+    display:flex;
+    flex-wrap:wrap;
+    cursor: pointer;
+}
+.wrapper{
+    background:#e3e5e4;
+}
